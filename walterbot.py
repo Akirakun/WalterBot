@@ -22,7 +22,7 @@ class RedBot:
 	
 	def __init__( self ):
 		config = configparser.ConfigParser()
-		config.read( "redbot.config" )
+		config.read( "walterbot.config" )
 
 		self.channels = config.get( "IRC", "channels" )
 		self.nickname = config.get( "IRC", "nickname" )
