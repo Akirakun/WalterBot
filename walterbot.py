@@ -13,7 +13,7 @@ import sqlite3
 
 from queue import Queue
 
-class RedBot:
+class WalterBot:
 	send_queue = Queue()
 	recv_queue = Queue()
 	connected = False
@@ -31,10 +31,8 @@ class RedBot:
 		self.commandPrefix = config.get( "IRC", "command_prefix" )
 		self.owner = config.get( "General", "owner" )
 
-		self.r = praw.Reddit( user_agent=config.get( "Reddit", "useragent" ) )
-		self.r.login( config.get( "Reddit", "username" ), config.get( "Reddit", "password" ) )
 
-		self.db = sqlite3.connect( "redbot.db" )
+		self.db = sqlite3.connect( "walterbot.db" )
 
 		self.socket = socket.socket()
 		self.LoadCommands()
